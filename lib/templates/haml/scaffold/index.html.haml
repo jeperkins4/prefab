@@ -1,0 +1,22 @@
+.page-header
+  %h1
+    <%= plural_table_name.capitalize.gsub("_","") %>
+    .pull-right
+      = link_to t('new', model_name: "<%= singular_table_name.gsub("_"," ").titleize %>").html_safe, new_<%= singular_table_name %>_path, :class => 'btn btn-primary'
+
+%table#<%= plural_table_name %>.table.table-bordered.table-striped.dataTable{:data => {:source => list_<%= plural_table_name %>_url(:format => 'json', :protocol => protocol)}}
+  %thead
+    %tr
+<% for attribute in attributes -%>
+      %th <%= attribute.human_name %>
+<% end -%>
+      %th
+  %tbody
+    - <%= plural_table_name %>.each do |<%= singular_table_name %>|
+      %tr
+  <% for attribute in attributes -%>
+      %td= <%= singular_table_name %>.<%= attribute.name %>
+  <% end -%>
+      %td
+          = link_to t('edit').html_safe, edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => 'btn btn-default btn-xs'
+          = link_to t('destroy').html_safe, <%= singular_table_name %>, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger'

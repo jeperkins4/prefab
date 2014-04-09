@@ -1,0 +1,16 @@
+= simple_form_for(<%= singular_table_name %>, :html => {:class => 'form-horizontal'}, :wrapper => :bootstrap, defaults: {label_html: {class: 'col-md-6'}}, role: 'form') do |f|
+  = f.error_notification
+
+  .row
+    .col-md-6
+    <%- attributes.each do |attribute| -%>
+      <%- if attribute.name.include?('_at') || attribute.name.include?('_on') -%>
+      = f.input :<%= attribute.name %>, :as => :string, :input_html => { :class => "datepicker" }
+      <%- else -%>
+      = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>
+      <%- end -%>
+    <%- end -%>
+
+    .row
+      .col-md-6.col-md-offset-6
+        = f.button :submit, :class => 'btn btn-primary'
