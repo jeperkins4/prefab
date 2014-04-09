@@ -4,6 +4,8 @@ Prefab
 
 Prefab provides [Twitter Bootstrap](http://getbootstrap.com/), jQuery Datatable, Spreadsheet, and Service class generators for Rails 4 (supported Rails >= 3.1). Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
 
+This gem is heavily inspired by [Bootstrap-generator](https://github.com/decioferreira/bootstrap-generators).  This gem began as a fork of his project, but then took on a life of its own.
+
 ## Current Twitter Bootstrap version
 
 The current version of Twitter Bootstrap is 3.1.1.
@@ -96,7 +98,7 @@ Now you can customize the look and feel of Bootstrap.
 
 ### Customize and extend Bootstrap
 
-If you select LESS or SCSS as your stylesheet engine, you will get an `app/assets/stylesheets/bootstrap-variables.[less|scss]` file with all of the default variables of Bootstrap. This way you can customize the look and feel of Bootstrap without having to download any extra file.
+You will get an `app/assets/stylesheets/bootstrap-variables.[less|scss]` file with all of the default variables of Bootstrap. This way you can customize the look and feel of Bootstrap without having to download any extra file.
 
 ### Javascript
 
