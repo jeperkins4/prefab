@@ -10,6 +10,11 @@ module Prefab
 
     def copy_lib
       directory "lib/templates/#{options[:template_engine]}"
+      directory "lib/generators/api"
+      directory "lib/generators/datatable"
+      directory "lib/generators/rails"
+      directory "lib/generators/report"
+      directory "lib/generators/service"
     end
 
     def copy_form_builder
