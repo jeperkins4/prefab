@@ -40,9 +40,9 @@ You can easily customize colors, grid system, fonts, and much more by editing `b
 
 ## Usage
 
-To print the options and usage run the command `rails generate bootstrap:install --help`
+To print the options and usage run the command `rails generate prefab:install --help`
 
-    rails generate bootstrap:install [options]
+    rails generate prefab:install [options]
 
     Options:
       -e, [--template-engine=TEMPLATE_ENGINE]       # Indicates when to generate template engine
@@ -74,7 +74,7 @@ Add the dependency on your Gemfile:
 
 And then run:
 
-    rails generate bootstrap:install --template-engine=haml
+    rails generate prefab:install --template-engine=haml
 
 
 #### Stylesheet engines
@@ -90,7 +90,7 @@ Make sure you have `sass-rails` dependency on your Gemfile:
 
 And then run:
 
-    rails generate bootstrap:install --stylesheet-engine=scss
+    rails generate prefab:install --stylesheet-engine=scss
 
 Now you can customize the look and feel of Bootstrap.
 
@@ -98,29 +98,13 @@ Now you can customize the look and feel of Bootstrap.
 
 ### Customize and extend Bootstrap
 
-You will get an `app/assets/stylesheets/bootstrap-variables.[less|scss]` file with all of the default variables of Bootstrap. This way you can customize the look and feel of Bootstrap without having to download any extra file.
+You will get an `app/assets/stylesheets/prefab-variables.[less|scss]` file with all of the default variables of Bootstrap. This way you can customize the look and feel of Bootstrap without having to download any extra file.
 
 ### Javascript
 
-Select all jQuery plugins (`app/assets/javascripts/bootstrap.js`)
+Select all jQuery plugins (`app/assets/javascripts/prefab.js`)
 
-    //= require bootstrap
-
-Or quickly add only the necessary javascript (Transitions: required for any animation; Popovers: requires Tooltips)
-
-    //= require bootstrap/scrollspy
-    //= require bootstrap/dropdown
-    //= require bootstrap/tab
-    //= require bootstrap/button
-    //= require bootstrap/collapse
-    //= require bootstrap/modal
-    //= require bootstrap/carousel
-    //= require bootstrap/alert
-    //= require bootstrap/transition
-    //= require bootstrap/tooltip
-    //= require bootstrap/popover
-    //= require bootstrap/affix
-
+    //= require prefab
 
 ## Customizing Templates
 
