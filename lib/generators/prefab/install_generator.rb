@@ -10,7 +10,7 @@ module Prefab
 
     def copy_lib
       directory "lib/templates/#{options[:template_engine]}"
-      directory "lib/generators/api"
+      directory "../../api"
       directory "lib/generators/datatable"
       directory "lib/generators/rails"
       directory "lib/generators/report"
