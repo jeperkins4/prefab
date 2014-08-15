@@ -10,7 +10,7 @@ module Prefab
 
     def copy_lib
       directory "lib/templates/#{options[:template_engine]}"
-      directory "../../api"
+      directory "lib/generators/api"
       directory "lib/generators/datatable"
       directory "lib/generators/rails"
       directory "lib/generators/report"
@@ -21,6 +21,7 @@ module Prefab
       copy_file "form_builders/form_builder/_form.html.#{options[:template_engine]}", "lib/templates/#{options[:template_engine]}/scaffold/_form.html.#{options[:template_engine]}"
     end
 
+    # Expects lib/generators/prefab/templates
     def create_layout
       template "layouts/starter.html.#{options[:template_engine]}", "app/views/layouts/application.html.#{options[:template_engine]}"
     end
@@ -35,7 +36,7 @@ module Prefab
       end
     end
 
-    def inject_backbone
+    def inject_bootstrap
       application_js_path = 'app/assets/javascripts/application.js'
 
       if ::File.exists?(::File.join(destination_root, application_js_path))

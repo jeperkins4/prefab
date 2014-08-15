@@ -44,7 +44,7 @@ private
   end
 
   def columns
-    ['#{plural_name}.name']
+    ['#{plural_name}.name','#{plural_name}.id']
   end
 
   def sort_column
