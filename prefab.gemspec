@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Prefab::VERSION
   spec.authors       = ["John Perkins"]
   spec.email         = ["jeperkins4@gmail.com"]
-  spec.summary       = %q{Prefab provides Twitter Bootstrap generators for Rails 4 (supported Rails >= 3.1).}
-  spec.description   = %q{Prefab provides Twitter Bootstrap generators for Rails 4 (supported Rails >= 3.1). Checkout http://getbootstrap.com.}
+  spec.summary       = %q{Prefab provides Twitter Bootstrap generators for Rails 5 (supported Rails >= 5.0.1).}
+  spec.description   = %q{Prefab provides Twitter Bootstrap generators for Rails 5 (supported Rails >= 5.0.1). Checkout http://getbootstrap.com.}
   spec.homepage      = "https://github.com/jeperkins4/prefab"
   spec.license       = "MIT"
 
@@ -20,10 +20,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.5"
+  spec.add_development_dependency "bundler", "~> 1.14.2"
   spec.add_development_dependency "rake"
   spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'debugger'
+  spec.add_development_dependency 'byebug'
 
-  spec.add_runtime_dependency "railties", ">= 3.1.0"
+  spec.add_runtime_dependency "railties", ">= 5.0.1"
 end

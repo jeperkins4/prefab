@@ -1,0 +1,8 @@
+Description:
+    Explain the generator
+
+Example:
+    rails generate Concern
+
+    This will create:
+        app/concerns/file_name.rb
