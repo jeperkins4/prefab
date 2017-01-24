@@ -2,7 +2,7 @@ Prefab
 ======
 [![Build Status](https://travis-ci.org/jeperkins4/prefab.png?branch=master)](https://travis-ci.org/jeperkins4/prefab)
 
-Prefab provides [Twitter Bootstrap](http://getbootstrap.com/), jQuery Datatable, Spreadsheet, and Service class generators for Rails 4 (supported Rails >= 3.1). Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
+Prefab provides [Twitter Bootstrap](http://getbootstrap.com/), jQuery Datatable, Spreadsheet, and Service class generators for Rails 5 (supported Rails >= 5.0.1). Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
 
 This gem is heavily inspired by [Bootstrap-generator](https://github.com/decioferreira/bootstrap-generators).  This gem began as a fork of his project, but then took on a life of its own.
 
@@ -14,7 +14,7 @@ The current version of Twitter Bootstrap is 3.1.1.
 
 In your Gemfile, add this line:
 
-    gem 'prefab', '~> 3.1.1'
+    gem 'prefab', '~> 1.0.2'
 
 Or you can install from latest build:
 
