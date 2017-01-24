@@ -8,7 +8,7 @@ This gem is heavily inspired by [Bootstrap-generator](https://github.com/deciofe
 
 ## Current Twitter Bootstrap version
 
-The current version of Twitter Bootstrap is 3.1.1.
+The current version of Twitter Bootstrap is 3.3.7.
 
 ## Installing Gem
 
