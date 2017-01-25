@@ -10,11 +10,11 @@ module Prefab
 
     def copy_lib
       directory "lib/templates/#{options[:template_engine]}"
-      directory "lib/generators/api"
-      directory "lib/generators/datatable"
-      directory "lib/generators/rails"
-      directory "lib/generators/report"
-      directory "lib/generators/service"
+#      directory "lib/generators/api"
+#      directory "lib/generators/datatable"
+#      directory "lib/generators/rails"
+#      directory "lib/generators/report"
+#      directory "lib/generators/service"
     end
 
     def copy_form_builder
@@ -37,7 +37,7 @@ module Prefab
     end
 
     def inject_bootstrap
-      application_js_path = 'app/assets/javascripts/application.js'
+      application_js_path = 'app/assets/javascripts/application.coffee'
 
       if ::File.exists?(::File.join(destination_root, application_js_path))
         inject_into_file application_js_path, before: '//= require_tree' do
