@@ -4,7 +4,7 @@ require_dependency "<%= namespaced_file_path %>/application_controller"
 <% end -%>
 <% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   respond_to :html, :json
 
   expose(:<%= plural_table_name %>) {  <%= orm_class.all(class_name) %> }
