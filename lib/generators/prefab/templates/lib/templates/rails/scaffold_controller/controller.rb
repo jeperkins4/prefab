@@ -4,13 +4,13 @@ require_dependency "<%= namespaced_file_path %>/application_controller"
 <% end -%>
 <% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   respond_to :html, :json
 
   expose(:<%= plural_table_name %>) {  <%= orm_class.all(class_name) %> }
   expose(:<%= singular_table_name %>) { params[:id].present? ? <%= class_name %>.find(params[:id]) : <%= class_name %>.new(params[:<%= singular_table_name %>]) }
 
-  def list
+  def index
     respond_to do |format|
       format.json { render json: <%= class_name.pluralize %>Datatable.new(view_context) }
     end
