@@ -1,9 +1,0 @@
-.panel.panel-default
-  .panel-heading
-    .panel-title
-      New <%= singular_table_name.titleize %>
-      .pull-right
-        = link_to t('back',to: "<%= plural_table_name.titleize %>").html_safe, <%= index_helper %>_path, :class => 'btn btn-default'
-  .panel-body
-    = render 'form'
-
