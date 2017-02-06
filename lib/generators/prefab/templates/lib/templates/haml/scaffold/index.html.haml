@@ -1,14 +1,16 @@
-.page-header
-  %h1
-    <%= plural_table_name.capitalize.gsub("_","") %>
-    .pull-right
-      = link_to t('new', model_name: "<%= singular_table_name.gsub("_"," ").titleize %>").html_safe, new_<%= singular_table_name %>_path, :class => 'btn btn-primary'
+.panel.panel-default
+  .panel-heading
+    .panel-title
+      <%= plural_table_name.capitalize.gsub("_","") %>
+      .pull-right
+        = link_to t('new', model_name: "<%= singular_table_name.gsub("_"," ").titleize %>").html_safe, new_<%= singular_table_name %>_path, :class => 'btn btn-primary'
 
-%table#<%= plural_table_name %>.table.table-bordered.table-striped.dataTable{:data => {:source => <%= plural_table_name %>_url(:format => 'json', :protocol => protocol)}}
-  %thead
-    %tr
-<% for attribute in attributes -%>
-      %th <%= attribute.human_name %>
-<% end -%>
-      %th
-  %tbody
+  .panel-body
+    %table#<%= plural_table_name %>.table.table-bordered.table-striped.dataTable{:data => {:source => <%= plural_table_name %>_url(:format => 'json', :protocol => protocol)}}
+      %thead
+        %tr
+    <% for attribute in attributes -%>
+          %th <%= attribute.human_name %>
+    <% end -%>
+          %th
+      %tbody
