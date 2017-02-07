@@ -24,7 +24,8 @@ private
   def data
     #{plural_name}.map do |#{plural_name.singularize}|
       [
-        link_to(#{plural_name.singularize}.name, #{plural_name.singularize})
+        link_to(#{plural_name.singularize}.name, #{plural_name.singularize}),
+        links(#{plural_name.singularize})
       ]
     end
   end
@@ -35,16 +36,16 @@ private
 
   def fetch_#{plural_name}
     search_columns = ['#{plural_name}.name']
-    #{plural_name} = #{class_name.singularize}.unscoped.select(search_columns).order(sort_column sort_direction)
+    #{plural_name} = #{class_name.singularize}.unscoped.select(columns).order(order_by(columns))
     #{plural_name} = #{plural_name}.page(page_count).per(per_page)
   end
 
-  def sort_column
-    columns[params[:iSortCol_0].to_i]
+  def columns
+    %w['#{plural_name}.name']
   end
 
-  def sort_direction
-    params[:sSortDir_0] == "desc" ? "desc" : "asc"
+  def exceptions
+    %w['#{plural_name}.id']
   end
 end
     FILE
