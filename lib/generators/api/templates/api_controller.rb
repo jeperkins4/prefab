@@ -1,9 +1,4 @@
-<% if namespaced? -%>
-require_dependency "<%= namespaced_file_path %>/application_controller"
-
-<% end -%>
-<% module_namespacing do -%>
-class <%= controller_class_name %>Controller < ApplicationController
+class API::V1::<%= file_name.camelize %>Controller < ApplicationController
   before_action :authenticate_user!
   respond_to :html, :json
 
@@ -65,4 +60,3 @@ class <%= controller_class_name %>Controller < ApplicationController
       <%- end -%>
     end
 end
-<% end -%>
