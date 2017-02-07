@@ -2,20 +2,17 @@ class API::V1::<%= file_name.camelize %>Controller < ApplicationController
   before_action :authenticate_user!
   respond_to :html, :json
 
-  expose(:<%= plural_table_name %>) {  <%= orm_class.all(class_name) %> }
-  expose(:<%= singular_table_name %>) { params[:id].present? ? <%= class_name %>.find(params[:id]) : <%= class_name %>.new(params[:<%= singular_table_name %>]) }
+  expose(:<%= file_name.pluralize %>) {  <%= file_name.camelize.all(class_name) %> }
+  expose(:<%= file_name.singularize %>) { params[:id].present? ? <%= class_name %>.find(params[:id]) : <%= class_name %>.new(params[:<%= file_name.singularize %>]) }
 
   def index
-    respond_to do |format|
-      format.json { render json: <%= class_name.pluralize %>Datatable.new(view_context) }
-    end
   end
 
   # POST <%= route_url %>
   # POST <%= route_url %>.json
   def create
     respond_to do |format|
-      if <%= orm_instance.save %>
+      if <%= file_name.singularize.save %>
         format.html { redirect_to <%= singular_table_name %>, notice: <%= "'#{human_name} was successfully created.'" %> }
         format.json { render json: <%= "#{singular_table_name}" %>, status: ':created', location: <%= "#{singular_table_name}" %> }
       else
