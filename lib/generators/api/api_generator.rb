@@ -2,6 +2,7 @@ class ApiGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
 
   def generate_api
+    copy_file "api_base.rb", "app/services/api/base.rb"
     template "api.rb", "app/services/api/#{file_name.underscore}.rb"
   end
 
