@@ -22,5 +22,10 @@ class <%= class_name %> < <%= parent_class_name.classify %>
     <%- end -%>
   end
 
+<%- if attributes_names.include?('latitude') && attributes_names.include?('location') -%>
+  before_save :geocode
+
+  geocoded_by :location
+<%- end -%>
 end
 <% end -%>
